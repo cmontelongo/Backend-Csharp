@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-namespace Backend.Repository
+﻿namespace Backend.Repository
 {
     public interface IRepository<TEntity>
     {
@@ -10,5 +8,7 @@ namespace Backend.Repository
         void Update(TEntity entity);
         void Delete(TEntity entity);
         Task Save();
+        public IEnumerable<TEntity> Search(Func<TEntity, bool> filter);
+
     }
 }
